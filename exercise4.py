@@ -49,7 +49,7 @@ def add_product():
         #If the user input is invalid, notify them and continue running the program
         except ValueError:
             print("No es posible añadir un valor no numérico o decimal a los productos")
-            exit
+            return
     #Repeat the logic above for cleaning products
     elif prod_name in cleaning_products:
         index = cleaning_products.index(prod_name)
@@ -57,7 +57,7 @@ def add_product():
             cleaning_product_qtys[index] += int(prod_qty)
         except ValueError:
             print("No es posible añadir un valor no numérico o decimal a los productos")
-            exit
+            return
     #Repeat the logic above for grain products
     elif prod_name in grain_products:
         index = grain_products.index(prod_name)
@@ -65,7 +65,7 @@ def add_product():
             grain_product_qtys[index] += int(prod_qty)
         except ValueError:
             print("No es posible añadir un valor no numérico o decimal a los productos")
-            exit
+            return
     #If the product doesn't exist in any category yet, ask the user for the category
     else:
         prod_group = input("Ingrese el grupo al que pertenece el producto que desea agregar: ")
@@ -85,7 +85,7 @@ def add_product():
             #If the category is invalid, notify the user and continue running the program
             case _:
                 print("El nombre de grupo ingresado es  invalido")
-                exit
+                return
             
     print("Producto añadido/actualizado correctamente ", end="\n")
     
